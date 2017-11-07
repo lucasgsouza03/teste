@@ -10,11 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
-from os import path
 import os
-mysqlconnstr = os.environ['MYSQLCONNSTR_localdb']
-mysqlconnlst = mysqlconnstr.split(';')
-mysqlconndict = dict(s.split('=',1) for s in mysqlconnlst)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -29,7 +25,7 @@ SECRET_KEY = 'zne*e2op%jdw&=z4^3p$l@!@$l+15f)w@c3-w-zd137-n8ej0$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -80,12 +76,8 @@ WSGI_APPLICATION = 'Impacta.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': mysqlconndict['Database'],
-        'USER': mysqlconndict['User Id'],
-        'PASSWORD': mysqlconndict['Password'],
-        'HOST': mysqlconndict['Data Source'].split(':')[0],
-        'PORT': mysqlconndict['Data Source'].split(':')[1],
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 

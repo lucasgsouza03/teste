@@ -133,14 +133,15 @@ display: block;
 background-color:#fff;
 width: 436px ;
 position:relative;
-margin-left: 350px;
  }
 
 .box2 {
 background-color:#fff;
 width: 431px ;
 position:relative;
-margin-left: 350px;
+}
+.content{
+	justify-content: space-around;
 }
 
 h2 {

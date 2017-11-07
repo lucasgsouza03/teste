@@ -1,15 +1,17 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
 		<title>Faculdade Impacta</title>
 		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="static/style.css">
+		<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 	</head>
 	<body>
 
 
 		<header>
-			<a href="/" class="logo"><img src="static/TecWeb/css/images/Header/menu/impacta_logo.png"></a>
+			<a href="/" class="logo"><img src="{% static 'TecWeb/css/images/Header/menu/impacta_logo.png' %}" alt="Logo"></a>
 			<nav class='menu'>
 				<ul class="nav"> 
 				<li><a href="/">Home</a>
@@ -33,8 +35,8 @@
 						<td align="left"><input type="submit" value="Entrar"></td>
 					</tr>
 					<tr>
-						<td align="left"><a href="EsqueciSenha" class="login2">Esqueceu a senha?</a></td>
-						<td align="left"><a href="NovoCadastro" class="login2">Criar conta</a></td>
+						<td align="left"><a href="/EsqueciSenha" class="login2">Esqueceu a senha?</a></td>
+						<td align="left"><a href="/NovoCadastro" class="login2">Criar conta</a></td>
 					</tr>
 						<td align="left">
 							<label class="container">
